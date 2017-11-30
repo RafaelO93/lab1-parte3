@@ -2,12 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Minimal</title>
-    <link>https://rafaelo93.github.io/lab1-parte3/index.xml</link>
+    <link>https://rafaelo93.github.io/lab1-parte3/</link>
     <description>Recent content on Minimal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Nov 2017 18:00:09 -0300</lastBuildDate>
-    <atom:link href="https://rafaelo93.github.io/lab1-parte3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Nov 2017 19:03:09 -0300</lastBuildDate>
+    
+	<atom:link href="https://rafaelo93.github.io/lab1-parte3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>D3 Post</title>
+      <link>https://rafaelo93.github.io/lab1-parte3/post/d3-post/</link>
+      <pubDate>Wed, 29 Nov 2017 19:03:09 -0300</pubDate>
+      
+      <guid>https://rafaelo93.github.io/lab1-parte3/post/d3-post/</guid>
+      <description>Dados sobre boqueirão  
+ Visualização de boqueirão   
+ .mychart rect { fill: steelblue; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }  var alturaSVG = 500, larguraSVG = 1750; function desenhaVis(dados) { var grafico = d3.select(&amp;lsquo;#chart&amp;rsquo;) .append(&amp;lsquo;svg&amp;rsquo;) .attr(&amp;lsquo;width&amp;rsquo;, larguraSVG) .attr(&amp;lsquo;height&amp;rsquo;, alturaSVG); var grupo = grafico.selectAll(&amp;lsquo;g&amp;rsquo;) .data(dados) .enter() .append(&amp;lsquo;g&amp;rsquo;); grupo.append(&amp;lsquo;circle&amp;rsquo;) .attr(&amp;ldquo;cx&amp;rdquo;, function(d) { return (d.mes) * 125; }) .</description>
+    </item>
     
     <item>
       <title>Visualização geral de 1990-2017</title>
@@ -15,45 +28,9 @@
       <pubDate>Wed, 15 Nov 2017 18:00:09 -0300</pubDate>
       
       <guid>https://rafaelo93.github.io/lab1-parte3/post/primeiro-post/</guid>
-      <description>&lt;p&gt;&lt;p&gt;Uma visualização geral indo do ano de 1990 até 2017 mostrando o percentual por ano.&lt;/p&gt;
-&lt;div id=&#34;vis&#34; width=300&gt;&lt;/div&gt;&lt;/p&gt;
+      <description>Uma visualização geral indo do ano de 1990 até 2017 mostrando o percentual por ano.
 
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
-    const spec = {
-   &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;,
-   &#34;data&#34;: {
-        &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;,
-        &#34;format&#34;: {
-        &#34;type&#34;: &#34;json&#34;,
-        &#34;property&#34;: &#34;volumes&#34;,
-         &#34;parse&#34;: {
-            &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34;
-                }
-      }
-    },
-  &#34;mark&#34;: &#34;bar&#34;,
-  &#34;encoding&#34;: {
-    &#34;x&#34;: {
-      &#34;timeUnit&#34;: &#34;year&#34;,
-      &#34;field&#34;: &#34;DataInformacao&#34;,
-      &#34;type&#34;: &#34;ordinal&#34;,
-      &#34;axis&#34;: {&#34;title&#34;: &#34;Ano do registro&#34;}
-    },
-    &#34;y&#34;: {
-      &#34;aggregate&#34;: &#34;mean&#34;,
-      &#34;field&#34;: &#34;VolumePercentual&#34;,
-      &#34;type&#34;: &#34;quantitative&#34;,
-      &#34;axis&#34;: {&#34;title&#34;: &#34;Volume Percentual de água&#34;}
-    }
-  }
-     };
-
-      vegaEmbed(&#39;#vis&#39;, spec).catch(console.warn);
-&lt;/script&gt;
-</description>
+    const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;mark&#34;: &#34;bar&#34;, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34;: &#34;year&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;ordinal&#34;, &#34;axis&#34;: {&#34;title&#34;: &#34;Ano do registro&#34;} }, &#34;y&#34;: { &#34;aggregate&#34;: &#34;mean&#34;, &#34;field&#34;: &#34;VolumePercentual&#34;, &#34;type&#34;: &#34;quantitative&#34;, &#34;axis&#34;: {&#34;</description>
     </item>
     
     <item>
@@ -62,50 +39,9 @@
       <pubDate>Tue, 14 Nov 2017 18:00:09 -0300</pubDate>
       
       <guid>https://rafaelo93.github.io/lab1-parte3/post/terceiro-post/</guid>
-      <description>&lt;p&gt;&lt;p&gt;Em 28 de dezembro de 1999, o manancial atingiu o pior nível de sua história, antes da seca atual, chegando ao nível de 14%.&lt;/p&gt;
-&lt;div id=&#34;vis&#34; width=300&gt;&lt;/div&gt;&lt;/p&gt;
+      <description>Em 28 de dezembro de 1999, o manancial atingiu o pior nível de sua história, antes da seca atual, chegando ao nível de 14%.
 
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
-    const spec = {
-   &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;,
-   &#34;data&#34;: {
-        &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;,
-        &#34;format&#34;: {
-        &#34;type&#34;: &#34;json&#34;,
-        &#34;property&#34;: &#34;volumes&#34;,
-         &#34;parse&#34;: {
-            &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34;
-                }
-      }
-    },
-  &#34;transform&#34;:[
-    {&#34;filter&#34;: {&#34;field&#34;: &#34;DataInformacao&#34;, &#34;range&#34;:  [{&#34;year&#34;: 1999, &#34;month&#34;: &#34;jan&#34;, &#34;date&#34;: 1}, {&#34;year&#34;: 2000, &#34;month&#34;: &#34;jan&#34;, &#34;date&#34;:1}] }}
-  ],
-  &#34;width&#34;: 300,
-  &#34;heigth&#34;: 300,
-  &#34;mark&#34;: &#34;line&#34;,
-  &#34;encoding&#34;: {
-    &#34;x&#34;: {
-      &#34;timeUnit&#34;: &#34;month&#34;,
-      &#34;field&#34;: &#34;DataInformacao&#34;,
-      &#34;type&#34;: &#34;ordinal&#34;,
-      &#34;axis&#34;: {&#34;title&#34;: &#34;Data de registro&#34;}
-    },
-    &#34;y&#34;: {
-      &#34;aggregate&#34;: &#34;mean&#34;,
-      &#34;field&#34;: &#34;VolumePercentual&#34;,
-      &#34;type&#34;: &#34;quantitative&#34;,
-      &#34;axis&#34;: {&#34;title&#34;: &#34;Volume Percentual&#34;}
-    }
-  }
-     };
-
-      vegaEmbed(&#39;#vis&#39;, spec).catch(console.warn);
-&lt;/script&gt;
-</description>
+    const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;transform&#34;:[ {&#34;filter&#34;: {&#34;field&#34;: &#34;DataInformacao&#34;, &#34;range&#34;: [{&#34;year&#34;: 1999, &#34;month&#34;: &#34;jan&#34;, &#34;date&#34;: 1}, {&#34;year&#34;: 2000, &#34;month&#34;: &#34;jan&#34;, &#34;date&#34;:1}] }} ], &#34;</description>
     </item>
     
     <item>
@@ -114,52 +50,7 @@
       <pubDate>Tue, 14 Nov 2017 09:32:50 -0300</pubDate>
       
       <guid>https://rafaelo93.github.io/lab1-parte3/post/</guid>
-      <description>&lt;div id=&#34;vis&#34; width=300&gt;&lt;/div&gt;
-
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
-    const spec = {
-    &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;,
-    &#34;data&#34;: {
-        &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;,
-        &#34;format&#34;: {
-        &#34;type&#34;: &#34;json&#34;,
-        &#34;property&#34;: &#34;volumes&#34;,
-        &#34;parse&#34;: {
-            &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34;
-                }
-            }
-        },
-
-    &#34;width&#34;: 500,
-    &#34;height&#34;: 120,
-
-    &#34;mark&#34;: {
-        &#34;type&#34;: &#34;area&#34;,
-        &#34;interpolate&#34;: &#34;monotone&#34;
-    },
-    &#34;selection&#34;: {
-      &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]}
-    },
-    &#34;encoding&#34;: {
-      &#34;x&#34;: {
-        &#34;timeUnit&#34; : &#34;monthyear&#34;,
-        &#34;field&#34;: &#34;DataInformacao&#34;,
-        &#34;type&#34;: &#34;temporal&#34;,
-        &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume percentual ao longo dos anos&#34;}
-       },
-      &#34;y&#34;: {
-        &#34;field&#34;: &#34;VolumePercentual&#34;,
-        &#34;type&#34;: &#34;quantitative&#34;,
-        &#34;axis&#34;: {&#34;tickCount&#34;: 30, &#34;grid&#34;: false, &#34;title&#34;: &#34;Volume percentual&#34;}
-         }
-       }
-     };
-      vegaEmbed(&#39;#vis&#39;, spec).catch(console.warn);
-&lt;/script&gt;
-</description>
+      <description>const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 500, &#34;height&#34;: 120, &#34;mark&#34;: { &#34;type&#34;: &#34;area&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume percentual ao longo dos anos&#34;} }, &#34;</description>
     </item>
     
     <item>
@@ -168,51 +59,9 @@
       <pubDate>Mon, 13 Nov 2017 18:00:09 -0300</pubDate>
       
       <guid>https://rafaelo93.github.io/lab1-parte3/post/quarto-post/</guid>
-      <description>&lt;p&gt;&lt;p&gt; O açude sangrou pela última vez, em 2011, ele teve a melhor fase de sua história. Segundo os dados da Aesa, ele passou 202 dias transbordando água sem parar.&lt;/br&gt;
-ele passou 202 dias transbordando água sem parar. A sangria começou no dia 6 de março de 2011 e só parou no dia 22 de setembro desse ano que podemos visualizar pelo gráfico&lt;/p&gt;
-&lt;div id=&#34;vis&#34; width=300&gt;&lt;/div&gt;&lt;/p&gt;
+      <description>O açude sangrou pela última vez, em 2011, ele teve a melhor fase de sua história. Segundo os dados da Aesa, ele passou 202 dias transbordando água sem parar. ele passou 202 dias transbordando água sem parar. A sangria começou no dia 6 de março de 2011 e só parou no dia 22 de setembro desse ano que podemos visualizar pelo gráfico
 
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
-    const spec = {
-   &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;,
-   &#34;data&#34;: {
-        &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;,
-        &#34;format&#34;: {
-        &#34;type&#34;: &#34;json&#34;,
-        &#34;property&#34;: &#34;volumes&#34;,
-         &#34;parse&#34;: {
-            &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34;
-                }
-      }
-    },
-  &#34;transform&#34;:[
-    {&#34;filter&#34;: {&#34;field&#34;: &#34;DataInformacao&#34;, &#34;range&#34;:  [{&#34;year&#34;: 2011, &#34;month&#34;: &#34;jan&#34;, &#34;date&#34;: 1}, {&#34;year&#34;: 2011, &#34;month&#34;: &#34;dec&#34;, &#34;date&#34;:31}] }}
-  ],
-  &#34;width&#34;: 300,
-  &#34;heigth&#34;: 300,
-  &#34;mark&#34;: &#34;area&#34;,
-  &#34;encoding&#34;: {
-    &#34;x&#34;: {
-      &#34;timeUnit&#34;: &#34;month&#34;,
-      &#34;field&#34;: &#34;DataInformacao&#34;,
-      &#34;type&#34;: &#34;ordinal&#34;,
-      &#34;axis&#34;: {&#34;title&#34;: &#34;Data de registro&#34;}
-    },
-    &#34;y&#34;: {
-      &#34;aggregate&#34;: &#34;mean&#34;,
-      &#34;field&#34;: &#34;VolumePercentual&#34;,
-      &#34;type&#34;: &#34;quantitative&#34;,
-      &#34;axis&#34;: {&#34;title&#34;: &#34;Volume Percentual&#34;}
-    }
-  }
-     };
-
-      vegaEmbed(&#39;#vis&#39;, spec).catch(console.warn);
-&lt;/script&gt;
-</description>
+    const spec = { &#34;</description>
     </item>
     
     <item>
@@ -221,50 +70,9 @@ ele passou 202 dias transbordando água sem parar. A sangria começou no dia 6 d
       <pubDate>Mon, 13 Nov 2017 17:10:48 -0300</pubDate>
       
       <guid>https://rafaelo93.github.io/lab1-parte3/post/segundo-post/</guid>
-      <description>&lt;p&gt;&lt;p&gt;Após abril o açude passou a receber as águas do Rio São Francisco&lt;/p&gt;
-&lt;div id=&#34;vis&#34; width=300&gt;&lt;/div&gt;&lt;/p&gt;
+      <description>Após abril o açude passou a receber as águas do Rio São Francisco
 
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
-    const spec = {
-   &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;,
-   &#34;data&#34;: {
-        &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;,
-        &#34;format&#34;: {
-        &#34;type&#34;: &#34;json&#34;,
-        &#34;property&#34;: &#34;volumes&#34;,
-         &#34;parse&#34;: {
-            &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34;
-                }
-      }
-    },
-  &#34;transform&#34;:[
-    {&#34;filter&#34;: {&#34;field&#34;: &#34;DataInformacao&#34;, &#34;range&#34;:  [{&#34;year&#34;: 2017, &#34;month&#34;: &#34;jan&#34;, &#34;date&#34;: 1}, {&#34;year&#34;: 2017, &#34;month&#34;: &#34;nov&#34;, &#34;date&#34;:1}] }}
-  ],
-  &#34;width&#34;: 300,
-  &#34;heigth&#34;: 300,
-  &#34;mark&#34;: &#34;point&#34;,
-  &#34;encoding&#34;: {
-    &#34;x&#34;: {
-      &#34;timeUnit&#34;: &#34;month&#34;,
-      &#34;field&#34;: &#34;DataInformacao&#34;,
-      &#34;type&#34;: &#34;ordinal&#34;,
-      &#34;axis&#34;: {&#34;title&#34;: &#34;Data de registro&#34;}
-    },
-    &#34;y&#34;: {
-      &#34;aggregate&#34;: &#34;mean&#34;,
-      &#34;field&#34;: &#34;VolumePercentual&#34;,
-      &#34;type&#34;: &#34;quantitative&#34;,
-      &#34;axis&#34;: {&#34;title&#34;: &#34;Volume Percentual&#34;}
-    }
-  }
-     };
-
-      vegaEmbed(&#39;#vis&#39;, spec).catch(console.warn);
-&lt;/script&gt;
-</description>
+    const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;transform&#34;:[ {&#34;filter&#34;: {&#34;field&#34;: &#34;DataInformacao&#34;, &#34;range&#34;: [{&#34;year&#34;: 2017, &#34;month&#34;: &#34;jan&#34;, &#34;date&#34;: 1}, {&#34;year&#34;: 2017, &#34;month&#34;: &#34;nov&#34;, &#34;date&#34;:1}] }} ], &#34;width&#34;: 300, &#34;heigth&#34;: 300, &#34;mark&#34;: &#34;point&#34;, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34;: &#34;</description>
     </item>
     
   </channel>

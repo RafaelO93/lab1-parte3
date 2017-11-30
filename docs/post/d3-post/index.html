@@ -75,7 +75,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">D3 Post</a>
+                    <a class="navbar-brand visible-xs" href="#">De olho em Boqueirão com d3&#43;SVG </a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -117,81 +117,59 @@
     
     
 
-    <h4><a href="/lab1-parte3/post/d3-post/">D3 Post</a></h4>
-    <h5>November 29, 2017</h5>
+    <h4><a href="/lab1-parte3/post/d3-post/">De olho em Boqueirão com d3&#43;SVG </a></h4>
+    <h5>November 28, 2017</h5>
     
 
 </div>
 
 
-    <br> <div class="text-justify"><p><html lang="pt-br"></p>
+    <br> <div class="text-justify"><script src="https://d3js.org/d3.v4.min.js"></script>
 
-<p><head>
-  <meta charset="utf-8">
-  <title>Dados sobre boqueirão</title>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head></p>
-
-<p><body>
-  <div class="container">
+<div class="container">
     <div class="row">
-      <h2>Visualização de boqueirão</h2>
+      <h2>Visualização Boqueirão com d3</h2>
     </div>
     <div class="row mychart" id="chart">
     </div>
-  </div></p>
+  </div>
 
-<p><style>
-    .mychart rect {
-      fill: steelblue;
-    }
-    .mychart rect:hover {
-      fill: goldenrod;
-    }
-    .mychart text {
-      font: 12px sans-serif;
-      text-anchor: left;
-    }
-  </style>
 <script type="text/javascript">
+    "use strict"
     var alturaSVG = 500,
         larguraSVG = 1750;
     function desenhaVis(dados) {
-          var grafico = d3.select(&lsquo;#chart&rsquo;)
-                            .append(&lsquo;svg&rsquo;)
-                              .attr(&lsquo;width&rsquo;, larguraSVG)
-                              .attr(&lsquo;height&rsquo;, alturaSVG);
-           var grupo = grafico.selectAll(&lsquo;g&rsquo;)
+          var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+                            .append('svg')
+                              .attr('width', larguraSVG)
+                              .attr('height', alturaSVG);
+           var grupo = grafico.selectAll('g')
                    .data(dados)
                    .enter()
-                   .append(&lsquo;g&rsquo;);
-         grupo.append(&lsquo;circle&rsquo;)
-            .attr(&ldquo;cx&rdquo;, function(d) { return (d.mes) * 125; })
-            .attr(&ldquo;cy&rdquo;, 250)
-            .attr(&ldquo;r&rdquo;, function(d) { return d.noventa_percentil * 0.60; })
-            .style(&ldquo;fill&rdquo;, &ldquo;goldenrod&rdquo;);
-          grupo.append(&lsquo;circle&rsquo;)
-             .attr(&ldquo;cx&rdquo;, function(d) { return (d.mes) * 125; })
-             .attr(&ldquo;cy&rdquo;, 250)
-             .attr(&ldquo;r&rdquo;, function(d) { return d.dez_percentil; })
-             .style(&ldquo;fill&rdquo;, &ldquo;steelblue&rdquo;);
-        grupo.append(&lsquo;text&rsquo;)
+                   .append('g');
+         grupo.append('circle')
+            .attr("cx", function(d) { return (d.mes) * 125; })
+            .attr("cy", 250)
+            .attr("r", function(d) { return d.noventa_percentil * 0.60; })
+            .style("fill", "goldenrod");
+          grupo.append('circle')
+             .attr("cx", function(d) { return (d.mes) * 125; })
+             .attr("cy", 250)
+             .attr("r", function(d) { return d.dez_percentil; })
+             .style("fill", "steelblue");
+        grupo.append('text')
              .text(function(d){
                 return d.mes;
              })
-             .attr(&ldquo;x&rdquo;, function(d) { return (d.mes) * 125 - 8; }) //Localização de onde o número ficará na barrano eixo X
-             .attr(&ldquo;y&rdquo;, 250);
+             .attr("x", function(d) { return (d.mes) * 125 - 8; }) //Localização de onde o número ficará na barrano eixo X
+             .attr("y", 250);
     }
-    d3.csv(&lsquo;dados/boqueirao-por-mes.csv&rsquo;, function(dados) {
-      console.log(&ldquo;provavelmente acontece depois&rdquo;);
+    d3.csv('../dados/boqueirao-por-mes.csv', function(dados) {
       desenhaVis(dados);
     });
-        console.log(&ldquo;provavelmente acontece primeiro&rdquo;) // me apague quando entender.
-</script>
-</body></p>
+ </script>
 
-<p></html></p>
+<p></div></p>
 </div>
 
     

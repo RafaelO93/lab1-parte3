@@ -1,5 +1,5 @@
 ---
-title: "Boqueirao Por Ano"
+title: "De olho em Boqueirão com d3+SVG "
 date: 2017-11-28T09:34:05-03:00
 draft: false
 ---
@@ -8,7 +8,7 @@ draft: false
 
 <div class="container">
     <div class="row">
-      <h2>Visualização final de boqueirão</h2>
+      <h2>Visualização Boqueirão com d3</h2>
     </div>
     <div class="row mychart" id="chart">
     </div>

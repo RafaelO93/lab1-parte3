@@ -6,20 +6,18 @@
     <description>Recent content on Minimal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Nov 2017 19:03:09 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 28 Nov 2017 09:34:05 -0300</lastBuildDate>
     
 	<atom:link href="https://rafaelo93.github.io/lab1-parte3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>D3 Post</title>
+      <title>De olho em Boqueirão com d3&#43;SVG </title>
       <link>https://rafaelo93.github.io/lab1-parte3/post/d3-post/</link>
-      <pubDate>Wed, 29 Nov 2017 19:03:09 -0300</pubDate>
+      <pubDate>Tue, 28 Nov 2017 09:34:05 -0300</pubDate>
       
       <guid>https://rafaelo93.github.io/lab1-parte3/post/d3-post/</guid>
-      <description>Dados sobre boqueirão  
- Visualização de boqueirão   
- .mychart rect { fill: steelblue; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }  var alturaSVG = 500, larguraSVG = 1750; function desenhaVis(dados) { var grafico = d3.select(&amp;lsquo;#chart&amp;rsquo;) .append(&amp;lsquo;svg&amp;rsquo;) .attr(&amp;lsquo;width&amp;rsquo;, larguraSVG) .attr(&amp;lsquo;height&amp;rsquo;, alturaSVG); var grupo = grafico.selectAll(&amp;lsquo;g&amp;rsquo;) .data(dados) .enter() .append(&amp;lsquo;g&amp;rsquo;); grupo.append(&amp;lsquo;circle&amp;rsquo;) .attr(&amp;ldquo;cx&amp;rdquo;, function(d) { return (d.mes) * 125; }) .</description>
+      <description>Visualização Boqueirão com d3    &#34;use strict&#34; var alturaSVG = 500, larguraSVG = 1750; function desenhaVis(dados) { var grafico = d3.select(&#39;#chart&#39;) // cria elemento  com um  dentro .append(&#39;svg&#39;) .attr(&#39;width&#39;, larguraSVG) .attr(&#39;height&#39;, alturaSVG); var grupo = grafico.selectAll(&#39;g&#39;) .data(dados) .enter() .append(&#39;g&#39;); grupo.append(&#39;circle&#39;) .attr(&#34;cx&#34;, function(d) { return (d.mes) * 125; }) .attr(&#34;cy&#34;, 250) .attr(&#34;r&#34;, function(d) { return d.noventa_percentil * 0.60; }) .style(&#34;fill&#34;, &#34;goldenrod&#34;); grupo.append(&#39;circle&#39;) .attr(&#34;cx&#34;, function(d) { return (d.</description>
     </item>
     
     <item>

@@ -44,7 +44,7 @@ draft: false
              .attr("x", function(d) { return (d.mes) * 125 - 8; }) //Localização de onde o número ficará na barrano eixo X
              .attr("y", 250);
     }
-    d3.csv('../boqueirao-por-mes.csv', function(dados) {
+    d3.csv('../dados/boqueirao-por-mes.csv', function(dados) {
       desenhaVis(dados);
     });
  </script>
